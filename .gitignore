@@ -1,0 +1,10 @@
+# Excluir arquivos de dados grandes (>100MB) para evitar erro no GitHub
+dados/master_municipios.csv
+dados/master_municipios_granulado.csv
+dados/*.xlsx
+dados/*.parquet
+
+# Pasta de ambiente virtual
+.venv/
+__pycache__/
+*.pyc

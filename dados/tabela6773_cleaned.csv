@@ -1,4 +1,4 @@
-cod_ibge,geo_level,uf,municipio,finalidade,renda,associacao,num_estabelecimentos,area_hectares
+municipality_code,geographic_level,state_abbreviation,municipality_name,land_use_purpose,income_bracket,association_status,number_of_agricultural_establishments,total_area_in_hectares
 1,1,,Brasil,Total,Total,Total,5073324,351289816.0
 1100015,7,RO,Alta Floresta D'Oeste,Total,Total,Total,2886,372746.0
 1100023,7,RO,Ariquemes,Total,Total,Total,2928,334256.0

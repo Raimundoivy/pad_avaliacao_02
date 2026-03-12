@@ -1,4 +1,4 @@
-cod_ibge,uf,municipio,num_estabelecimentos,num_tratores
+municipality_code,state_abbreviation,municipality_name,number_of_agricultural_establishments,number_of_tractors_in_use
 1,,Brasil,734280.0,1229907.0
 1,,Norte,35092.0,58436.0
 2,,Nordeste,53284.0,83866.0
