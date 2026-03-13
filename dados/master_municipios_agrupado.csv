@@ -1,4 +1,4 @@
-municipality_code,state_abbreviation,population_in_2024,rural_high_school_enrollments,area_algodão_herbáceo_2024,area_cana_de_açúcar_2024,area_milho_2024,area_soja_2024,total_agricultural_establishments,total_agricultural_area_in_hectares,number_of_tractors_in_use
+codigo_municipio,sigla_estado,populacao_em_2024,matriculas_ensino_medio_rural,area_algodão_herbáceo_2024,area_cana_de_açúcar_2024,area_milho_2024,area_soja_2024,total_estabelecimentos_agricolas,area_total_agricola_em_hectares,numero_de_tratores_em_uso
 1100015,RO,22853.0,72,,84.0,9664.0,11758.0,2886.0,372746.0,517.0
 1100023,RO,108573.0,703,,730.0,37593.0,109520.0,2928.0,334256.0,501.0
 1100031,RO,5690.0,33,,92.0,104069.0,224895.0,1075.0,113085.0,247.0
