@@ -8,3 +8,4 @@ dados/*.parquet
 .venv/
 __pycache__/
 *.pyc
+output_formats/

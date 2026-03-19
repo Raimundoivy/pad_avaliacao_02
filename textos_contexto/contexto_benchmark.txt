@@ -1,0 +1,32 @@
+1 - Baseados em Texto
+1.1 - CSV
+1.2 - XML
+1.3 - JSON
+
+2 - Baseados em Linha
+2.1 - SequenceFile
+2.2 - AVRO
+
+3 - Baseados em Colunas
+3.1 - RC
+3.2 - ORC
+3.3 - Parquet
+3.4 - Carbon Data
+
+4 - Baseados em memória
+4.1 - Arrow
+
+As pesquisas devem abordar os seguintes tópicos (de todos os tipos):
+A - Origem / Histórico
+B - Estrutura
+C - Encoding
+D - Compressão
+
+Implementação:
+Fazer a implementação de leituras de todos os tipos de dados, e criação de gráficos com comparações de:
+- Como ler somente os metadados
+- Selecionar somente algumas colunas e comparar com o tempo de leitura do dado completo
+- Tempo de escrita vs. Tempo de leitura.
+- Tamanho em disco (com diferentes compressões: Snappy, Gzip, Zstd) - após salvar arquivos nos diferentes padrões
+- Uso de memória RAM durante o processamento.
+- Deve controlar (e imprimir) o tempo total de processamento.
