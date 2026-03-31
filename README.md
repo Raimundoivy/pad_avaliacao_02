@@ -9,18 +9,16 @@ O projeto reúne duas frentes complementares:
 
 ## Onde Começar
 
-- **Leitura principal:** `notebooks/PAD_projeto.ipynb`
-- **Notebook modular da análise:** `notebooks/pad_avaliacao_02.ipynb`
-- **Notebook modular de dicionário e validação:** `notebooks/pad_avaliacao_02_dicionario_validacao.ipynb`
-- **Notebook modular de benchmark:** `notebooks/benchmarks.ipynb`
+- **Volume principal de leitura e execucao:** `notebooks/PAD_projeto.ipynb`
+- **Artefatos finais de dados:** `dados/saidas_finais/master_municipios_longo.csv` e `dados/saidas_finais/master_municipios_analitico_snapshot.csv`
 
-O volume principal `PAD_projeto.ipynb` é gerado por `notebooks/build_pad_projeto_notebook.py` a partir dos notebooks modulares.
+O repositorio adota uma arquitetura de **arquivo unico**: todo o codigo operacional necessario para a leitura principal do projeto fica centralizado em `notebooks/PAD_projeto.ipynb`.
 
 ## O Que Há de Principal no Projeto
 
 - **Volume principal de entrega:** `notebooks/PAD_projeto.ipynb`
 - **Artefatos finais atuais:** `dados/saidas_finais/master_municipios_longo.csv` (`4.036.741 x 21`) e `dados/saidas_finais/master_municipios_analitico_snapshot.csv` (`5.570 x 39`)
-- **Pipeline principal:** `notebooks/pad_avaliacao_02_pipeline.py`
+- **Contrato atual do projeto:** notebook unico com analise, validacao e apendice tecnico no mesmo volume
 
 As bases combinam fontes oficiais do IBGE e do INEP, com integração por código IBGE de 7 dígitos. O snapshot analítico final expõe sinais booleanos auditáveis e a classificação `regime_territorial`.
 
@@ -28,14 +26,10 @@ As bases combinam fontes oficiais do IBGE e do INEP, com integração por códig
 
 ### `notebooks/`
 
-Reúne os notebooks principais do projeto e os scripts que geram os volumes consolidados.
+Reune o volume principal do projeto.
 
 - `PAD_projeto.ipynb`: volume final de leitura e entrega.
-- `pad_avaliacao_02.ipynb`: análise principal e geração dos artefatos finais.
-- `pad_avaliacao_02_dicionario_validacao.ipynb`: perfil estrutural, dicionário e validação dos arquivos finais.
-- `benchmarks.ipynb`: benchmark técnico de formatos de armazenamento.
-- `build_pad_projeto_notebook.py`: gera o volume final consolidado.
-- `build_pad_avaliacao_02_notebook.py` e `build_pad_avaliacao_02_dicionario_validacao.py`: regeneram os notebooks modulares.
+- O proprio notebook concentra a analise territorial, a validacao dos arquivos finais e o apendice tecnico de benchmark.
 
 ### `dados/`
 
@@ -62,10 +56,9 @@ Guarda as saídas geradas pelo benchmark de formatos.
 
 ## Relação Entre os Arquivos
 
-- `pad_avaliacao_02.ipynb` produz a base longa e o snapshot analítico.
-- `pad_avaliacao_02_dicionario_validacao.ipynb` descreve e valida esses artefatos.
-- `benchmarks.ipynb` registra a frente técnica de comparação entre formatos.
-- `PAD_projeto.ipynb` reúne esses blocos em um único volume para leitura.
+- `PAD_projeto.ipynb` e o centro do projeto: carrega os artefatos finais, produz as tabelas analiticas, executa as checagens e apresenta o benchmark no mesmo volume.
+- `dados/saidas_finais/` guarda os arquivos finais consumidos e auditados pelo notebook principal.
+- `textos_contexto/` reune os pareceres, auditorias e materiais de contexto que explicam a evolucao metodologica e operacional do projeto.
 
 ## Observação Sobre Arquivos Grandes
 
