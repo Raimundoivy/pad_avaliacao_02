@@ -1,16 +1,16 @@
-# Excluir arquivos de dados grandes (>100MB) para evitar erro no GitHub
-dados/master_municipios.csv
-dados/master_municipios_granulado.csv
-dados/master_municipios_tratado.csv
+# Excluir arquivos de dados grandes e artefatos locais
+dados/cache/
+dados/intermediarios/
+dados/legado/
+dados/saidas_finais/
 dados/*.xlsx
 dados/*.parquet
+benchmarks_outputs/
 
 # Pasta de ambiente virtual
 .venv/
 __pycache__/
 *.pyc
-output_formats/
-
 # Spark e Metadados Internos
 spark-warehouse/
 metastore_db/
