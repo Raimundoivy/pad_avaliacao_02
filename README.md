@@ -9,27 +9,29 @@ O projeto reúne duas frentes complementares:
 
 ## Onde Começar
 
-- **Volume principal de leitura e execucao:** `notebooks/PAD_projeto.ipynb`
-- **Artefatos finais de dados:** `dados/saidas_finais/master_municipios_longo.csv` e `dados/saidas_finais/master_municipios_analitico_snapshot.csv`
+- **Variante recomendada para leitura e execucao:** `notebooks/PAD_projeto_sem_snapshot.ipynb`
+- **Artefato de dados exigido por essa variante:** `dados/saidas_finais/master_municipios_longo.csv`
+- **Volume legado com infraestrutura de snapshot:** `notebooks/PAD_projeto.ipynb`
 
-O repositorio adota uma arquitetura de **arquivo unico**: todo o codigo operacional necessario para a leitura principal do projeto fica centralizado em `notebooks/PAD_projeto.ipynb`.
+O repositorio adota uma arquitetura de **arquivo unico** em ambos os volumes. A diferenca e de escopo: `PAD_projeto_sem_snapshot.ipynb` trabalha diretamente sobre a base longa, enquanto `PAD_projeto.ipynb` preserva a arquitetura anterior com camada sintetica municipal e apendice tecnico de benchmark.
 
 ## O Que Há de Principal no Projeto
 
-- **Volume principal de entrega:** `notebooks/PAD_projeto.ipynb`
-- **Artefatos finais atuais:** `dados/saidas_finais/master_municipios_longo.csv` (`4.036.741 x 21`) e `dados/saidas_finais/master_municipios_analitico_snapshot.csv` (`5.570 x 39`)
-- **Contrato atual do projeto:** notebook unico com analise, validacao e apendice tecnico no mesmo volume
+- **Notebook principal snapshot-free:** `notebooks/PAD_projeto_sem_snapshot.ipynb`
+- **Artefato canônico dessa variante:** `dados/saidas_finais/master_municipios_longo.csv` (`4.036.741 x 21`)
+- **Notebook legado:** `notebooks/PAD_projeto.ipynb`
+- **Contrato atual da variante recomendada:** notebook unico com analise e validacao centradas na base longa
 
-As bases combinam fontes oficiais do IBGE e do INEP, com integração por código IBGE de 7 dígitos. O snapshot analítico final expõe sinais booleanos auditáveis e a classificação `regime_territorial`.
+As bases combinam fontes oficiais do IBGE e do INEP, com integracao por codigo IBGE de 7 digitos. Na variante recomendada, as agregacoes municipais existem apenas em memoria, como apoio analitico, sem se converterem em novo artefato publico.
 
 ## Como Ler o Repositório
 
 ### `notebooks/`
 
-Reune o volume principal do projeto.
+Reune os volumes principais do projeto.
 
-- `PAD_projeto.ipynb`: volume final de leitura e entrega.
-- O proprio notebook concentra a analise territorial, a validacao dos arquivos finais e o apendice tecnico de benchmark.
+- `PAD_projeto_sem_snapshot.ipynb`: variante recomendada, centrada na base longa e sem infraestrutura de snapshot.
+- `PAD_projeto.ipynb`: volume legado, preservado como registro da arquitetura com snapshot e benchmark.
 
 ### `dados/`
 
@@ -39,7 +41,7 @@ Concentra os arquivos de dados e os resultados gerados pela pipeline.
 - `cache/`: cache local das consultas e extrações de apoio.
 - `intermediarios/`: arquivos auxiliares usados em etapas de tratamento.
 - `legado/`: artefatos de fases anteriores do projeto.
-- `saidas_finais/`: arquivos finais vigentes da refatoração.
+- `saidas_finais/`: arquivos finais usados pelos notebooks, com destaque para `master_municipios_longo.csv` como base canonica da variante snapshot-free.
 
 ### `textos_contexto/`
 
@@ -52,12 +54,13 @@ Reúne os documentos que explicam o projeto, apoiam a leitura metodológica e re
 
 ### `benchmarks_outputs/`
 
-Guarda as saídas geradas pelo benchmark de formatos.
+Guarda as saidas geradas pelo benchmark de formatos associado ao notebook legado.
 
 ## Relação Entre os Arquivos
 
-- `PAD_projeto.ipynb` e o centro do projeto: carrega os artefatos finais, produz as tabelas analiticas, executa as checagens e apresenta o benchmark no mesmo volume.
-- `dados/saidas_finais/` guarda os arquivos finais consumidos e auditados pelo notebook principal.
+- `PAD_projeto_sem_snapshot.ipynb` e a leitura preferencial do projeto: carrega `master_municipios_longo.csv`, produz agregacoes analiticas temporarias e executa a validacao da base longa.
+- `PAD_projeto.ipynb` permanece como volume historico da fase em que o projeto ainda mantinha uma camada sintetica municipal e o bloco de benchmark no mesmo arquivo.
+- `dados/saidas_finais/` guarda os arquivos consumidos pelos notebooks, com `master_municipios_longo.csv` como interface minima da variante recomendada.
 - `textos_contexto/` reune os pareceres, auditorias e materiais de contexto que explicam a evolucao metodologica e operacional do projeto.
 
 ## Observação Sobre Arquivos Grandes
